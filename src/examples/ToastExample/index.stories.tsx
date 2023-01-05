@@ -1,10 +1,10 @@
-import { Toast } from "components/Toast/index";
+import { ToastExamplePage } from ".";
 
 export default {
   title: "Example",
-  component: Toast,
+  component: ToastExamplePage,
 };
 
-const Teamplate: React.FC = (args: any) => <Toast {...args} />;
+const Teamplate: React.FC = (args: any) => <ToastExamplePage {...args} />;
 
 export const Default = Teamplate.bind({});
