@@ -1,46 +1,117 @@
-# Getting Started with Create React App
+# Tестовое задание библиотека Toast
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Содержание
 
-## Available Scripts
+- [Техническое задание](#Техническое-задание)
+- [Используемые технологии](#Используемые-технологии)
+- [Структура проекта](#Структура-проекта)
+- [Тестирование](#Тестирование)
+- [Как начать](#Как-начать)
+- [Полезные ссылки](#Полезные-ссылки)
 
-In the project directory, you can run:
+## Техническое задание
 
-### `npm start`
+Необходимо реализовать **_Toast_** библиотеку Javascript, для представления не блокирующих уведомлений . Цель состоит в том, чтобы создать базовую библиотеку, которую можно настраивать и расширять.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+#### Необходимый функционал:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- Показать уведомление.
+- Возможность устанавливать положению уведомления.
+- Возможность устанавливать тип уведомления (уведомления об успехе, ошибке, оповещение и т.д.).
+- Возможность устанавливать длительность показа уведомления.
+- Возможность задавать заголовок и описание уведомления.
+- Возможность устанавливать отступы уведомления.
+- Возможность изменять цвет типа уведомлений.
+- Возможность изменять анимацию появления и исчезновения.
 
-### `npm test`
+#### Дополнительный функционал:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Возможность "смахивать" уведомления в сторону для быстрого закрытия.
+- Показ до 3 уведомлений одновременно.
 
-### `npm run build`
+#### Пример графического представления:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Ссылка на макет: [Макет "Toast"](https://xd.adobe.com/view/9efd755b-6a29-49bf-4e13-d5cd74643170-e8cc/). Также его можно найти в папке **doc** c расширением **.xd** для программы **Adobe XD**.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+> ![example_1](https://github.com/slava-ovchinnikov/education-task-toast-lib/blob/master/doc/example_1.png?raw=true)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### Также проект предполагает:
 
-### `npm run eject`
+- Разделить библиотеку на два основных компонента: представления и логики. Для реализации логики приложения необходимо использовать порождающий паттерн программирования **_"Одиночка"_**, который гарантирует, что у класса есть только один экземпляр, и предоставляет к нему глобальную точку доступа (см. подробнее [паттерн Одиночка](https://refactoring.guru/ru/design-patterns/singleton)). При помощи паттерна создать сервисный класс, в котором вы будете задавать конфигурацию и вызывать уведомление. Для реализация представления необходимо использовать **react portals**.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- Настроить конфигурации **_babel_**, **_eslint_**.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Подключить и настроить бандлер **_Rollup_** для сборки проекта в библиотеку.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- Подключить и настроить **_Strorybook_** для проверки работоспособности вашей библиотеки.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- Обработку ошибок через паттерн **_Error Boundaries_**
 
-## Learn More
+- Проверку типов в React компонентах, передаваемых параметров и подобных объектов.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Использование алиасов для импортирования файлов.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Используемые технологии
+
+### Для react
+
+- **_node.js_** - программная платформа, основанная на движке V8 (транслирующем JavaScript в машинный код).
+- **_babel_** - транспайлер, преобразующий код из одного стандарта в другой.
+- **_eslint_** - линтер для JavaScript кода.
+- **_yarn_** - менеджер пакетов.
+- **_rollup_** - сборщик ES-модулей.
+- **_stortbook_** - инструмент, используемый для разработки компонентов пользовательского интерфейса в изоляции.
+- **_react_** - JavaScript-библиотека для создания пользовательских интерфейсов.
+- **_prop-types_** - набор валидаторов, которые могут быть использованы для проверки получаемых данных.
+- **_styled-components_** - система стилизации react компонентов.
+- **_cypress_** — e2e тестирование для веб приложений.
+
+### Для react native
+
+Will be soon...
+
+## Структура проекта
+
+Структура проекта должна быть реализована в том же стиле, что и в первом тестовом задании (см. [Структура проекта](https://github.com/slava-ovchinnikov/education-task-calculator#%D0%A1%D1%82%D1%80%D1%83%D0%BA%D1%82%D1%83%D1%80%D0%B0-%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B0)).
+
+## Тестирование
+
+Реализовать e2e тестирование c полным покрытием функционала приложения:
+
+- Сервис для конфигурации Toast-компонента.
+- Графическое (компонент модуля и т.д.)
+
+## Как начать
+
+Эта инструкция поможет вам сделать копию проекта и запустить его на вашей локальной машине для разработки и тестирования.
+
+### React/ReactNative
+
+#### Установка
+
+Для того чтобы получить шаблон проекта, необходимо сделать следующее:
+
+1. Зарегистрировать аккаунт в github.
+2. Получить доступ к репозиторию с шаблоном.
+3. Импортировать шаблон в свой репозиторий.
+4. Склонировать репозиторий на свою локальную машину.
+
+> ![template_1](https://github.com/slava-ovchinnikov/education-task-calculator/blob/master/doc/template.png?raw=true)
+
+## Полезные ссылки
+
+[React](https://reactjs.org/docs/getting-started.html)
+
+[Rollup](https://rollupjs.org/guide/en/)
+
+[Storybook](https://storybook.js.org/docs/basics/introduction/)
+
+[Eslint](https://eslint.org/docs/user-guide/configuring)
+
+[Babel](https://babeljs.io/docs/en/configuration)
+
+[Тестирование Cypress](https://docs.cypress.io/guides/overview/why-cypress.html#In-a-nutshell)
+
+[Тестирование Detox](https://github.com/wix/Detox/blob/master/docs/README.md)
+
+[Styled-components](https://www.styled-components.com/docs)
