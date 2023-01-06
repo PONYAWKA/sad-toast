@@ -13,4 +13,4 @@ export const ToastExamplePage: React.FC = () => {
       <Toast />
     </>
   );
-};
+}

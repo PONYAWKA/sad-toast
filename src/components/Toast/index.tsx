@@ -11,11 +11,8 @@ export const ToastContainer = ({ options }: IToastContainer) => {
   const position = Positioins.LB;
   return (
     <ToastBody position={position}>
-      {options.map((currentOption: ToastOptionType, index) => (
-        <ToastElement
-          key={index}
-          {...currentOption}
-        />
+      {options.map((currentOption: ToastOptionType) => (
+        <ToastElement key={currentOption.id} {...currentOption} />
       ))}
     </ToastBody>
   );

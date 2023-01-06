@@ -4,4 +4,6 @@ export interface ToastOptionType {
   text: string;
   position: string;
   id: string;
+  isNew: boolean;
+  toDelete: boolean;
 }

@@ -13,13 +13,21 @@ export const useToast: any = () => {
     const { duration } = option;
     ToastManager.addToast({ ...option, id: localid });
     if (duration) setTimeout(() => removeToast(localid), duration);
-    setToastList(ToastManager.getToast());
+  
+    setToastList([...ToastManager.getToast()]);
   };
 
   const removeToast = (index: number | string = 1) => {
-    if (typeof index === "number") ToastManager.removeToast(index);
+    setToastList(
+      ToastList.map((e, i) => {
+        if (i === ToastList.length - 1) return { ...e, toDelete: true, };
+        return e;
+      })
+    );
+
+    if (typeof index === "number") ToastManager.removeToast();
     else ToastManager.removeToastById(index);
-    setToastList(ToastManager.getToast());
+    setToastList([...ToastManager.getToast()]);
   };
 
   return {

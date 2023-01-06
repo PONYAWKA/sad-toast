@@ -20,5 +20,5 @@
       "components/*": ["components/*"]
     }
   },
-  "include": ["src"]
+  "include": ["src", "App.js"]
 }

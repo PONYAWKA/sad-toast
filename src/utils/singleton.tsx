@@ -13,22 +13,20 @@ class ToastService {
   }
 
   addToast(toastOption: ToastOptionType) {
-    this.toast = [...this.toast, toastOption];
+    this.toast = [
+      ...this.toast.map((e) => ({ ...e, isNew: false })),
+      toastOption,
+    ];
   }
 
   getToast() {
     return this.toast;
   }
-  removeToast(index: number = 0) {
-    if (this.toast.length === 1) this.toast = [];
-    else {
-      this.toast.splice(index, 1);
-      this.toast = [...this.toast];
-    }
-    console.log(this.toast.length);
+  removeToast() {
+    this.toast.shift();
   }
   removeToastById(id: string) {
-   this.toast = this.toast.filter((e) => e.id !== id);
+    this.toast = this.toast.filter((e) => e.id !== id);
   }
 }
 
