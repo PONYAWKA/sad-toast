@@ -1,8 +1,5 @@
 import styled, { css, } from "styled-components";
-import { ElementBodyType } from "./types";
-
-
-
+import { ElementBodyType } from "components/ToastElement/types";
 
 export const ElementBody = styled.div<ElementBodyType>`
   position: absolute;
@@ -18,7 +15,7 @@ export const ElementBody = styled.div<ElementBodyType>`
   margin: ${({ margin }) => margin}px;
   animation: ${({ isNew }) => (isNew ? css`ani 1s forwards` : css``)};
   ${({ animation }) => animation};
-  max-width: 200px;
+  width: 200px;
   height: 100px;
   box-sizing: border-box;
 `;

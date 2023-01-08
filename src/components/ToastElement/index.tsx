@@ -14,12 +14,12 @@ interface ToastOptionElementType extends ToastOptionType {
 
 export const ToastElement = (options: ToastOptionElementType) => {
   const {
-    label = "ToastLable",
+    label = "Toast Lable",
     text = "some text",
     id,
     paddings = 20,
     animation = "leftToRight",
-    type = "waring",
+    type = "warning",
     isNew,
     margin = 10,
     position = "LeftBottom",
@@ -27,17 +27,14 @@ export const ToastElement = (options: ToastOptionElementType) => {
     TextSize,
     removeToast,
   } = options;
-
   const handleDragOver = (e: React.SyntheticEvent) => {
     e.preventDefault();
     removeToast(id);
   };
-  console.log(ToastTypes[type as keyof typeof ToastTypes]);
-
   return (
     <ElementBody
       isNew={isNew}
-      animation={AnumationType[animation as keyof typeof AnumationType] }
+      animation={AnumationType[animation as keyof typeof AnumationType]}
       type={ToastTypes[type as keyof typeof ToastTypes]}
       padding={paddings}
       margin={margin}

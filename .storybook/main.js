@@ -6,6 +6,9 @@ module.exports = {
     config.resolve.alias = {
       ...config.resolve.alias,
       components: path.resolve(__dirname, "../src/components"),
+      Hooks: path.resolve(__dirname, "../src/Hooks"),
+      utils: path.resolve(__dirname, "../src/utils"),
+      Types: path.resolve(__dirname, "../src/Types"),
     };
     return config;
   },

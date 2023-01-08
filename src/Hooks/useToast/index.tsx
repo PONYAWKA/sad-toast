@@ -10,8 +10,14 @@ export const useToast = () => {
 
   const addToast = (option: ToastConigType) => {
     const localid = nanoid();
-    const { duration } = option;
-    ToastManager.addToast({ ...option, id: localid, isNew: true });
+    const { duration, margin, position } = option;
+    ToastManager.addToast({
+      ...option,
+      id: localid,
+      isNew: true,
+      margin: margin ?? 20,
+      position: position ?? "LeftBottom",
+    });
 
     if (duration) setTimeout(() => removeToast(localid), duration);
     setToastList([...ToastManager.getToast()]);

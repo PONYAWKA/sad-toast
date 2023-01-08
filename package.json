@@ -5,6 +5,7 @@
   "dependencies": {
     "@craco/craco": "^7.0.0",
     "@rollup/plugin-alias": "^4.0.2",
+    "@rollup/plugin-babel": "^6.0.3",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -16,6 +17,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
+    "rollup-plugin-babel": "^4.4.0",
     "styled-components": "^5.3.6",
     "typescript": "^4.9.4",
     "web-vitals": "^2.1.4"
@@ -24,7 +26,8 @@
     "lint": "npx eslint ./src --ext .ts,.tsx",
     "lint:fix": "npx eslint ./src --ext .ts,.tsx --fix",
     "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "rollup": "rollup -c --bundleConfigAsCjs"
   },
   "eslintConfig": {
     "extends": [
@@ -91,8 +94,11 @@
     "rollup-plugin-dts": "^5.1.0",
     "webpack": "^5.75.0"
   },
-  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
-  "main": "index.js",
-  "author": "",
+  "browser": {
+    "crypto": false,
+    "stream": false
+  },
+  "description": "Simple Modsen ToastLib",
+  "author": "PONYAWKA",
   "license": "ISC"
 }

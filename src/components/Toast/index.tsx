@@ -8,7 +8,7 @@ interface IToastContainer {
 }
 
 export const ToastContainer = ({ options, removeToast }: IToastContainer) => {
-  let op = {
+  const op = {
     LeftTop: 0,
     LeftBottom: 0,
     RightTop: 0,
@@ -18,12 +18,16 @@ export const ToastContainer = ({ options, removeToast }: IToastContainer) => {
   return (
     <ToastBody>
       {options.map((currentOption: ToastOptionType) => {
+        const { position } = currentOption;
         const prevSize = op.BoxMarin;
         op.BoxMarin += currentOption.margin;
+
+  
+        
         return (
           <ToastElement
             key={currentOption.id}
-            mul={op[currentOption.position as keyof typeof op]++}
+            mul={op[position as keyof typeof op]++}
             TextSize={prevSize}
             removeToast={removeToast}
             {...currentOption}
