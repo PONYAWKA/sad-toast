@@ -1,6 +1,6 @@
 import { ToastElement } from "components/ToastElement";
 import { ToastOptionType } from "Types/ToastOptionType";
-import { ToastBody } from "./styled";
+import { ToastBody } from "components/Toast/styled";
 
 interface IToastContainer {
   options: ToastOptionType[];

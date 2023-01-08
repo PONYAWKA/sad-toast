@@ -1,24 +1,23 @@
-import { css } from "styled-components";
+
+import {css} from 'styled-components' 
+import { PositionFunctionReturnType } from 'Types/ToastOptionType';
+
 export const Positioins = {
-  LeftTop: (mul, margin) => ({
+  LeftTop: (mul: number, margin: number):PositionFunctionReturnType => ({
     x: `top: ${mul * 100 + margin}px`,
     y: "left: 1%;",
-    column: "column",
   }),
-  LeftBottom: (mul, margin) => ({
+  LeftBottom: (mul: number, margin: number):PositionFunctionReturnType => ({
     x: `bottom: ${mul * 100 + margin}px;`,
     y: "left: 1%;",
-    column: "column-reverse",
   }),
-  RightTop: (mul, margin) => ({
+  RightTop: (mul: number, margin: number):PositionFunctionReturnType => ({
     x: `top: ${mul * 100 + margin}px;`,
     y: "right: 1%;",
-    column: "column",
   }),
-  RightBottom: (mul, margin) => ({
+  RightBottom: (mul: number, margin: number):PositionFunctionReturnType => ({
     x: `bottom: ${mul * 100 + margin}px;`,
     y: "right: 1%;",
-    column: "column-reverse",
   }),
 };
 

@@ -1,5 +1,9 @@
 import { ToastOptionType } from "Types/ToastOptionType";
-import { ElementBody, ToastInfo, ToastLabel } from "./styled";
+import {
+  ElementBody,
+  ToastInfo,
+  ToastLabel,
+} from "components/ToastElement/styled";
 import { AnumationType, Positioins, ToastTypes } from "utils/theme";
 
 interface ToastOptionElementType extends ToastOptionType {
@@ -17,31 +21,27 @@ export const ToastElement = (options: ToastOptionElementType) => {
     animation = "leftToRight",
     type = "waring",
     isNew,
-    margin,
-    position,
+    margin = 10,
+    position = "LeftBottom",
     mul,
     TextSize,
     removeToast,
   } = options;
 
-
   const handleDragOver = (e: React.SyntheticEvent) => {
     e.preventDefault();
-    console.log(e);
     removeToast(id);
   };
+  console.log(ToastTypes[type as keyof typeof ToastTypes]);
 
   return (
     <ElementBody
       isNew={isNew}
-      animation={AnumationType[animation as keyof typeof AnumationType]}
+      animation={AnumationType[animation as keyof typeof AnumationType] }
       type={ToastTypes[type as keyof typeof ToastTypes]}
       padding={paddings}
       margin={margin}
-      position={Positioins[(position ?? "LB") as keyof typeof Positioins](
-        mul,
-        TextSize
-      )}
+      position={Positioins[position as keyof typeof Positioins](mul, TextSize)}
       draggable
       onDragOver={handleDragOver}
     >

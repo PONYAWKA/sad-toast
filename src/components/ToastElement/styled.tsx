@@ -1,6 +1,10 @@
-import styled, { css } from "styled-components";
+import styled, { css, } from "styled-components";
+import { ElementBodyType } from "./types";
 
-export const ElementBody = styled.div`
+
+
+
+export const ElementBody = styled.div<ElementBodyType>`
   position: absolute;
   display: flex;
   flex-direction: column;

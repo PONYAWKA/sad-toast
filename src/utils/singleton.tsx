@@ -26,7 +26,7 @@ class ToastService {
   }
   removeToast() {
     if (this.toast.length) this.toast.at(-1)!.isNew = false;
-    const toast = this.toast.pop();
+    this.toast.pop();
   }
   removeToastById(id: string) {
     if (this.toast.length) this.toast.at(-1)!.isNew = false;

@@ -20,3 +20,8 @@ export interface ToastConigType {
   position: string;
   type: string;
 }
+
+export interface PositionFunctionReturnType {
+  x:string,
+  y:string,
+}

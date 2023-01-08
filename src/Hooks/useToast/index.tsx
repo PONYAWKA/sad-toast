@@ -5,7 +5,7 @@ import { ToastManager } from "utils/singleton";
 import { ToastConigType, ToastOptionType } from "Types/ToastOptionType";
 import { nanoid } from "nanoid";
 
-export const useToast: any = () => {
+export const useToast = () => {
   const [ToastList, setToastList] = useState<ToastOptionType[]>([]);
 
   const addToast = (option: ToastConigType) => {
