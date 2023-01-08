@@ -1,10 +1,11 @@
 import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
+import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import typescript from "@rollup/plugin-typescript";
 import alias from "@rollup/plugin-alias";
 import { fileURLToPath } from "url";
 import { babel } from "@rollup/plugin-babel";
-import path from "path"; 
+import path from "path";
 const __filename = fileURLToPath(import.meta.url);
 
 const __dirname = path.dirname(__filename);
@@ -26,12 +27,13 @@ export default [
         sourcemap: true,
       },
       {
-        file: "RollDown/index.es.js",
-        format: "es",
+        file: "RollDown/index.esm.js",
+        format: "esm",
         exports: "named",
       },
     ],
     plugins: [
+      peerDepsExternal(),
       resolve(),
       commonjs(),
       babel({

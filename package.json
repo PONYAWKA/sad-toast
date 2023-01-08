@@ -2,6 +2,7 @@
   "name": "sad-toast",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "dependencies": {
     "@craco/craco": "^7.0.0",
     "@rollup/plugin-alias": "^4.0.2",
@@ -18,6 +19,7 @@
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
     "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
     "styled-components": "^5.3.6",
     "typescript": "^4.9.4",
     "web-vitals": "^2.1.4"
@@ -27,7 +29,7 @@
     "lint:fix": "npx eslint ./src --ext .ts,.tsx --fix",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
-    "rollup": "rollup -c --bundleConfigAsCjs"
+    "rollup": "rollup -c"
   },
   "eslintConfig": {
     "extends": [
@@ -94,11 +96,16 @@
     "rollup-plugin-dts": "^5.1.0",
     "webpack": "^5.75.0"
   },
-  "browser": {
-    "crypto": false,
-    "stream": false
+  "peerDependencies": {
+    "nanoid": "^4.0.0",
+    "react": "*",
+    "react-dom": "*",
+    "styled-components": "*"
   },
   "description": "Simple Modsen ToastLib",
   "author": "PONYAWKA",
-  "license": "ISC"
+  "license": "ISC",
+  "browser": {
+    "crypto": false
+  }
 }
