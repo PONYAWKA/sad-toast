@@ -1,11 +1,31 @@
 import { useToast } from "Hooks/useToast";
-import React from "react";
-
-export const ToastExamplePage: React.FC = () => {
+import { ToastConigType} from "Types/ToastOptionType";
+export const ToastExamplePage = (props: ToastConigType) => {
+  const {
+    label ,
+    text ,
+    paddings ,
+    animation,
+    type ,
+    margin ,
+    duration,
+    position
+  } = props;
   const { addToast, removeToast, Toast } = useToast();
-  const addToastHandler = () => addToast({ text: "Adada", duration: 0, position: "LB" });
-  const removeToastHandler = () => removeToast();
+  const addToastHandler = () => {
+    addToast({
+      text: text,
+      duration: duration,
+      position: position,
+      animation: animation,
+      paddings: paddings,
+      label: label,
+      type: type,
+      margin: margin,
+    });
+  };
 
+  const removeToastHandler = () => removeToast();
   return (
     <>
       <button onClick={addToastHandler}>Simple add button</button>
@@ -13,4 +33,4 @@ export const ToastExamplePage: React.FC = () => {
       <Toast />
     </>
   );
-}
+};

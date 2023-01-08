@@ -13,19 +13,23 @@ class ToastService {
   }
 
   addToast(toastOption: ToastOptionType) {
-    this.toast = [
-      ...this.toast.map((e) => ({ ...e, isNew: false })),
-      toastOption,
-    ];
+    if (this.toast.length < 3) {
+      this.toast = [
+        ...this.toast.map((e) => ({ ...e, isNew: false })),
+        toastOption,
+      ];
+    } else if (this.toast.length) this.toast.at(-1)!.isNew = false;
   }
 
   getToast() {
     return this.toast;
   }
   removeToast() {
-    this.toast.shift();
+    if (this.toast.length) this.toast.at(-1)!.isNew = false;
+    const toast = this.toast.pop();
   }
   removeToastById(id: string) {
+    if (this.toast.length) this.toast.at(-1)!.isNew = false;
     this.toast = this.toast.filter((e) => e.id !== id);
   }
 }

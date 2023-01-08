@@ -1,19 +1,35 @@
 import { ToastElement } from "components/ToastElement";
 import { ToastOptionType } from "Types/ToastOptionType";
-import { Positioins } from "utils/theme";
 import { ToastBody } from "./styled";
 
 interface IToastContainer {
   options: ToastOptionType[];
+  removeToast: (index: number | string) => void;
 }
 
-export const ToastContainer = ({ options }: IToastContainer) => {
-  const position = Positioins.LB;
+export const ToastContainer = ({ options, removeToast }: IToastContainer) => {
+  let op = {
+    LeftTop: 0,
+    LeftBottom: 0,
+    RightTop: 0,
+    RightBottom: 0,
+    BoxMarin: 0,
+  };
   return (
-    <ToastBody position={position}>
-      {options.map((currentOption: ToastOptionType) => (
-        <ToastElement key={currentOption.id} {...currentOption} />
-      ))}
+    <ToastBody>
+      {options.map((currentOption: ToastOptionType) => {
+        const prevSize = op.BoxMarin;
+        op.BoxMarin += currentOption.margin;
+        return (
+          <ToastElement
+            key={currentOption.id}
+            mul={op[currentOption.position as keyof typeof op]++}
+            TextSize={prevSize}
+            removeToast={removeToast}
+            {...currentOption}
+          />
+        );
+      })}
     </ToastBody>
   );
 };
