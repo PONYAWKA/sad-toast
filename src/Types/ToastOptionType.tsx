@@ -9,6 +9,7 @@ export interface ToastOptionType {
   isNew: boolean;
   type: string;
   margin: number;
+  color: string;
 }
 export interface ToastConigType {
   duration: number;
@@ -19,6 +20,7 @@ export interface ToastConigType {
   animation: string;
   position: string;
   type: string;
+  color: string;
 }
 
 export interface PositionFunctionReturnType {

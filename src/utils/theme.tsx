@@ -33,18 +33,13 @@ export const Positioins = {
 };
 
 export const ToastTypes = {
-  warning: {
-    backgroundColor: "#f0ad4e",
-  },
-  info: {
-    backgroundColor: "#5bc0de",
-  },
-  error: {
-    backgroundColor: "#d9534f",
-  },
-  success: {
-    backgroundColor: "#5cb85c",
-  },
+  warning: "#f0ad4e",
+
+  info: "#5bc0de",
+
+  error: "#d9534f",
+
+  success: "#5cb85c",
 };
 
 export const AnumationType = {

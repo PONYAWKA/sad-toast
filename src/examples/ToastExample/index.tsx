@@ -9,7 +9,8 @@ export const ToastExamplePage = (props: ToastConigType) => {
     type ,
     margin ,
     duration,
-    position
+    position,
+    color,
   } = props;
   const { addToast, removeToast, Toast } = useToast();
   const addToastHandler = () => {
@@ -22,6 +23,7 @@ export const ToastExamplePage = (props: ToastConigType) => {
       label: label,
       type: type,
       margin: margin,
+      color: color
     });
   };
 

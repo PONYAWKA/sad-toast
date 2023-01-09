@@ -15,6 +15,7 @@ module.exports = {
   addons: [
     "@storybook/addon-links",
     "@storybook/addon-essentials",
+    "storybook-color-picker",
     "@storybook/addon-interactions",
     "@storybook/preset-create-react-app",
   ],

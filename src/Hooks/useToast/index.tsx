@@ -4,6 +4,7 @@ import { createPortal } from "react-dom";
 import { ToastManager } from "utils/singleton";
 import { ToastConigType, ToastOptionType } from "Types/ToastOptionType";
 import { nanoid } from "nanoid";
+import ErrorBoundary from "components/ErrorBoundary";
 
 export const useToast = () => {
   const [ToastList, setToastList] = useState<ToastOptionType[]>([]);
@@ -34,7 +35,9 @@ export const useToast = () => {
     removeToast,
     Toast: () =>
       createPortal(
-        <ToastContainer options={ToastList} removeToast={removeToast} />,
+        <ErrorBoundary>
+          <ToastContainer options={ToastList} removeToast={removeToast} />
+        </ErrorBoundary>,
         document.body
       ),
   };

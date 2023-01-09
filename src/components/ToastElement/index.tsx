@@ -1,16 +1,11 @@
-import { ToastOptionType } from "Types/ToastOptionType";
 import {
   ElementBody,
   ToastInfo,
   ToastLabel,
 } from "components/ToastElement/styled";
 import { AnumationType, Positioins, ToastTypes } from "utils/theme";
-
-interface ToastOptionElementType extends ToastOptionType {
-  mul: number;
-  removeToast: (index: number | string) => void;
-  TextSize: number;
-}
+import { ToastOptionElementType } from "components/ToastElement/types";
+import { useState } from "react";
 
 export const ToastElement = (options: ToastOptionElementType) => {
   const {
@@ -24,23 +19,35 @@ export const ToastElement = (options: ToastOptionElementType) => {
     margin = 10,
     position = "LeftBottom",
     mul,
-    TextSize,
+    color,
     removeToast,
   } = options;
-  const handleDragOver = (e: React.SyntheticEvent) => {
+  const [opacity, setOpacity] = useState(1);
+  const handleDragEnd = (e: React.SyntheticEvent) => {
+    console.log(e);
     e.preventDefault();
     removeToast(id);
   };
+  const handleDragStart = (e: React.SyntheticEvent) => {
+    console.log(e);
+    setTimeout(() => setOpacity(0));
+  };
+
   return (
     <ElementBody
+      opacity={opacity}
       isNew={isNew}
       animation={AnumationType[animation as keyof typeof AnumationType]}
-      type={ToastTypes[type as keyof typeof ToastTypes]}
+      type={color ?? ToastTypes[type as keyof typeof ToastTypes]}
       padding={paddings}
       margin={margin}
-      position={Positioins[position as keyof typeof Positioins](mul, TextSize)}
+      position={Positioins[position as keyof typeof Positioins](
+        mul,
+        mul * margin
+      )}
       draggable
-      onDragOver={handleDragOver}
+      onDragEnd={handleDragEnd}
+      onDragStart={handleDragStart}
     >
       <ToastLabel>{label}</ToastLabel>
       <ToastInfo>{text}</ToastInfo>
