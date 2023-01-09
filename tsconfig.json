@@ -19,10 +19,10 @@
     "paths": {
       "components/*": ["components/*"]
     },  
-    //  "declaration": true,
-    //  "declarationDir": "types",
-    //  "sourceMap": true,
-    //  "outDir": "dist",
+      "declaration": true,
+      "declarationDir": "types",
+      "sourceMap": true,
+      "outDir": "dist",
   },
   "include": ["src", "App.js"]
 }

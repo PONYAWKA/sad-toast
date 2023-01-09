@@ -1,4 +1,4 @@
-import styled, { css, } from "styled-components";
+import styled, { css } from "styled-components";
 import { ElementBodyType } from "components/ToastElement/types";
 
 export const ElementBody = styled.div<ElementBodyType>`
