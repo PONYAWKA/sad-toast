@@ -8,10 +8,8 @@ import {
 import { AnumationType, Positioins, ToastTypes } from "utils/theme";
 import { ToastOptionElementType } from "components/ToastElement/types";
 import { useState } from "react";
-import { removeToast } from "Hooks/useToast";
-import error from "../../icons/error.svg";
 import { iconSelector } from "utils/helper";
-
+import { removeToast } from "Hooks/useToast/ToastController";
 export const ToastElement = (options: ToastOptionElementType) => {
   const {
     label = "Toast Lable",

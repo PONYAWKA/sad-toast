@@ -3,6 +3,7 @@ import commonjs from "@rollup/plugin-commonjs";
 import peerDepsExternal from "rollup-plugin-peer-deps-external";
 import typescript from "@rollup/plugin-typescript";
 import alias from "@rollup/plugin-alias";
+import image from "@rollup/plugin-image";
 import { fileURLToPath } from "url";
 import { babel } from "@rollup/plugin-babel";
 import path from "path";
@@ -33,11 +34,12 @@ export default [
       },
     ],
     plugins: [
+      image(),
       peerDepsExternal(),
       resolve(),
       commonjs(),
       babel({
-        exclude: "node_modules/**",
+        exclude: ["node_modules/**", "src/examples/**"],
         presets: ["@babel/preset-react"],
       }),
       typescript({
@@ -60,9 +62,10 @@ export default [
           {
             find: "utils",
             replacement: path.resolve(__dirname, "src/utils"),
-          },{
+          },
+          {
             find: "icons",
-            replacement: path.resolve(__dirname, "src/icons"),
+            replacement: path.resolve(__dirname, "src/components/icons"),
           },
         ],
         Resolver,

@@ -17,7 +17,7 @@ export const ElementBody = styled.div<ElementBodyType>`
   margin: ${({ margin }) => margin}px 5px;
   animation: ${({ isNew }) => (isNew ? css`ani .7s forwards` : css``)};
   ${({ animation }) => animation};
-  width: 250px;
+  width: 400px;
   height: 100px;
   box-sizing: border-box;
   ${({ opacity }) => opacitySwitcher(opacity)};

@@ -1,4 +1,5 @@
-import { addToast, removeToast, useToast } from "Hooks/useToast";
+import { useToast } from "Hooks/useToast";
+import { addToast, removeToast } from "Hooks/useToast/ToastController";
 import { ToastConigType} from "Types/ToastOptionType";
 export const ToastExamplePage = (props: ToastConigType) => {
   const {

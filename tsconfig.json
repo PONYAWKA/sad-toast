@@ -25,5 +25,5 @@
       "sourceMap": true,
       "outDir": "dist",
   },
-  "include": ["src", "App.js"]
+  "include": ["src", "App.js", "examples"]
 }

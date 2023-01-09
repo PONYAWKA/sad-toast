@@ -6,6 +6,7 @@
     "@craco/craco": "^7.0.0",
     "@rollup/plugin-alias": "^4.0.2",
     "@rollup/plugin-babel": "^6.0.3",
+    "@rollup/plugin-image": "^3.0.1",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -95,6 +96,7 @@
     "prop-types": "^15.8.1",
     "rollup": "^3.9.1",
     "rollup-plugin-dts": "^5.1.0",
+    "rollup-plugin-svg": "^2.0.0",
     "webpack": "^5.75.0"
   },
   "peerDependencies": {
