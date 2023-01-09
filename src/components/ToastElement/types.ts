@@ -16,5 +16,4 @@ export interface ElementBodyType {
 
 export interface ToastOptionElementType extends ToastOptionType {
   mul: number;
-  removeToast: (index: number | string) => void;
 }

@@ -4,10 +4,9 @@ import { ToastBody } from "components/Toast/styled";
 
 interface IToastContainer {
   options: ToastOptionType[];
-  removeToast: (index: number | string) => void;
 }
 
-export const ToastContainer = ({ options, removeToast }: IToastContainer) => {
+export const ToastContainer = ({ options }: IToastContainer) => {
   const op = {
     LeftTop: 0,
     LeftBottom: 0,
@@ -23,7 +22,6 @@ export const ToastContainer = ({ options, removeToast }: IToastContainer) => {
           <ToastElement
             key={currentOption.id}
             mul={op[position as keyof typeof op]++}
-            removeToast={removeToast}
             {...currentOption}
           />
         );

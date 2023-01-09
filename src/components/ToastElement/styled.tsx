@@ -6,7 +6,7 @@ export const ElementBody = styled.div<ElementBodyType>`
   position: absolute;
   user-select: none;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   background-color: ${({ type }) => type};
   ${({ position }) => position.x};
@@ -17,10 +17,11 @@ export const ElementBody = styled.div<ElementBodyType>`
   margin: ${({ margin }) => margin}px 5px;
   animation: ${({ isNew }) => (isNew ? css`ani .7s forwards` : css``)};
   ${({ animation }) => animation};
-  width: 200px;
+  width: 250px;
   height: 100px;
   box-sizing: border-box;
   ${({ opacity }) => opacitySwitcher(opacity)};
+  font-size: 24px;
 `;
 
 export const ElementContent = styled.div`
@@ -35,4 +36,12 @@ export const ToastInfo = styled.div`
   word-break: break-all;
   align-items: center;
   height: 100%;
+`;
+
+export const ToastTextContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+export const Icon = styled.img`
+  margin-right: 5px;
 `;

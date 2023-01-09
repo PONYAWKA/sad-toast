@@ -1,11 +1,15 @@
 import {
   ElementBody,
+  Icon,
   ToastInfo,
   ToastLabel,
+  ToastTextContainer,
 } from "components/ToastElement/styled";
 import { AnumationType, Positioins, ToastTypes } from "utils/theme";
 import { ToastOptionElementType } from "components/ToastElement/types";
 import { useState } from "react";
+import { removeToast } from "Hooks/useToast";
+import error from "../../icons/error.svg";
 
 export const ToastElement = (options: ToastOptionElementType) => {
   const {
@@ -20,16 +24,16 @@ export const ToastElement = (options: ToastOptionElementType) => {
     position = "LeftBottom",
     mul,
     color,
-    removeToast,
   } = options;
+
   const [opacity, setOpacity] = useState(1);
+
   const handleDragEnd = (e: React.SyntheticEvent) => {
-    console.log(e);
     e.preventDefault();
     removeToast(id);
   };
+
   const handleDragStart = (e: React.SyntheticEvent) => {
-    console.log(e);
     setTimeout(() => setOpacity(0));
   };
 
@@ -49,8 +53,11 @@ export const ToastElement = (options: ToastOptionElementType) => {
       onDragEnd={handleDragEnd}
       onDragStart={handleDragStart}
     >
-      <ToastLabel>{label}</ToastLabel>
-      <ToastInfo>{text}</ToastInfo>
+      <Icon src={error} alt="error" />
+      <ToastTextContainer>
+        <ToastLabel>{label}</ToastLabel>
+        <ToastInfo>{text}</ToastInfo>
+      </ToastTextContainer>
     </ElementBody>
   );
 };

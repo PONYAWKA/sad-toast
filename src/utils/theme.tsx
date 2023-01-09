@@ -34,12 +34,15 @@ export const Positioins = {
 
 export const ToastTypes = {
   warning: "#f0ad4e",
-
   info: "#5bc0de",
-
   error: "#d9534f",
-
   success: "#5cb85c",
+};
+const iconType = {
+  warning: warning,
+  info: info,
+  error: error,
+  success: success,
 };
 
 export const AnumationType = {

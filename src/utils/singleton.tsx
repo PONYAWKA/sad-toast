@@ -4,12 +4,16 @@ class ToastService {
   private static instance: ToastService;
 
   toast: ToastOptionType[] = [];
+  setToast: any;
 
   static setInstance(): ToastService {
     if (!ToastService.instance) {
       this.instance = new ToastService();
     }
     return this.instance;
+  }
+  init(setToast: any) {
+    this.setToast = setToast;
   }
 
   addToast(toastOption: ToastOptionType) {
@@ -18,19 +22,27 @@ class ToastService {
         ...this.toast.map((e) => ({ ...e, isNew: false })),
         toastOption,
       ];
-    } else if (this.toast.length) this.toast.at(-1)!.isNew = false;
+    };
+    setTimeout(() => {
+      this.toast.at(-1)!.isNew = false;
+      this.setToast([...this.toast]);
+    },700);
+    this.setToast(this.toast);
   }
 
   getToast() {
     return this.toast;
   }
-  removeToast() {
-    if (this.toast.length) this.toast.at(-1)!.isNew = false;
-    this.toast.pop();
-  }
-  removeToastById(id: string) {
-    if (this.toast.length) this.toast.at(-1)!.isNew = false;
-    this.toast = this.toast.filter((e) => e.id !== id);
+  removeToast(id?: string) {
+    if (id) {
+      if (this.toast.length) this.toast.at(-1)!.isNew = false;
+      this.toast = this.toast.filter((e) => e.id !== id);
+    } else if (this.toast.length) {
+      this.toast.at(-1)!.isNew = false;
+      this.toast.pop();
+    }
+
+    this.setToast([...this.toast]);
   }
 }
 
