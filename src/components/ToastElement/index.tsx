@@ -10,6 +10,7 @@ import { ToastOptionElementType } from "components/ToastElement/types";
 import { useState } from "react";
 import { removeToast } from "Hooks/useToast";
 import error from "../../icons/error.svg";
+import { iconSelector } from "utils/helper";
 
 export const ToastElement = (options: ToastOptionElementType) => {
   const {
@@ -53,7 +54,7 @@ export const ToastElement = (options: ToastOptionElementType) => {
       onDragEnd={handleDragEnd}
       onDragStart={handleDragStart}
     >
-      <Icon src={error} alt="error" />
+      <Icon src={iconSelector(type)} width={64} alt="error" />
       <ToastTextContainer>
         <ToastLabel>{label}</ToastLabel>
         <ToastInfo>{text}</ToastInfo>

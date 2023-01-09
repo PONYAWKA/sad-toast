@@ -1,8 +1,5 @@
 import { css } from "styled-components";
-import info from "icons/info.svg";
-import error from "icons/error.svg";
-import warning from "icons/warning.svg";
-import success from "icons/success.svg";
+import { iconType } from "./theme";
 export const opacitySwitcher = (opacity: number) =>
   !opacity
     ? css`
@@ -10,11 +7,5 @@ export const opacitySwitcher = (opacity: number) =>
       `
     : css``;
 
-const iconType = {
-  warning: warning,
-  info: info,
-  error: error,
-  success: success,
-};
-
-export const iconSelector = (type: string) => {};
+export const iconSelector = (icon: string) =>
+  iconType[icon as keyof typeof iconType];

@@ -9,6 +9,7 @@ module.exports = {
       Hooks: path.resolve(__dirname, "../src/Hooks"),
       utils: path.resolve(__dirname, "../src/utils"),
       Types: path.resolve(__dirname, "../src/Types"),
+      icons: path.resolve(__dirname, "../src/icons"),
     };
     return config;
   },

@@ -1,5 +1,9 @@
 import { css } from "styled-components";
 import { PositionFunctionReturnType } from "Types/ToastOptionType";
+import info from "icons/info.svg";
+import error from "icons/error.svg";
+import warning from "icons/warning.svg";
+import success from "icons/success.svg";
 
 export const Positioins = {
   LeftTop: (
@@ -38,7 +42,7 @@ export const ToastTypes = {
   error: "#d9534f",
   success: "#5cb85c",
 };
-const iconType = {
+export const iconType = {
   warning: warning,
   info: info,
   error: error,

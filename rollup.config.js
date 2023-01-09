@@ -60,6 +60,9 @@ export default [
           {
             find: "utils",
             replacement: path.resolve(__dirname, "src/utils"),
+          },{
+            find: "icons",
+            replacement: path.resolve(__dirname, "src/icons"),
           },
         ],
         Resolver,
