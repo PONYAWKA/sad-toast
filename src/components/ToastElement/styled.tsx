@@ -12,16 +12,16 @@ export const ElementBody = styled.div<ElementBodyType>`
   ${({ position }) => position.x};
   ${({ position }) => position.y};
   color: white;
-  border-radius: 20px;
+  border-radius: ${({ theme }) => theme.borderRadius.m}px;
   padding: ${({ padding }) => padding}px;
-  margin: ${({ margin }) => margin}px 5px;
+  margin: ${({ margin }) => margin}px ${({ theme }) => theme.margin.s}px;
   animation: ${({ isNew }) => (isNew ? css`ani .7s forwards` : css``)};
   ${({ animation }) => animation};
-  width: 400px;
-  height: 100px;
+  width: ${({ theme }) => theme.width.xxxl}px;
+  height: ${({ theme }) => theme.width.x}px;
   box-sizing: border-box;
   ${({ opacity }) => opacitySwitcher(opacity)};
-  font-size: 24px;
+  font-size: ${({ theme }) => theme.font.m};
 `;
 
 export const ElementContent = styled.div`
@@ -36,6 +36,7 @@ export const ToastInfo = styled.div`
   word-break: break-all;
   align-items: center;
   height: 100%;
+  font-size: ${({ theme }) => theme.font.m}px;
 `;
 
 export const ToastTextContainer = styled.div`
@@ -43,5 +44,5 @@ export const ToastTextContainer = styled.div`
   flex-direction: column;
 `;
 export const Icon = styled.img`
-  margin-right: 5px;
+  margin-right: ${({ theme }) => theme.margin.m}px;
 `;

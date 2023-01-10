@@ -4,8 +4,7 @@ class ToastService {
   private static instance: ToastService;
 
   toast: ToastOptionType[] = [];
-  setToast: any;
-
+  setToast: (arg: ToastOptionType[]) => void = ( ) => {};;
   static setInstance(): ToastService {
     if (!ToastService.instance) {
       this.instance = new ToastService();
@@ -18,15 +17,12 @@ class ToastService {
 
   addToast(toastOption: ToastOptionType) {
     if (this.toast.length < 3) {
+      
       this.toast = [
         ...this.toast.map((e) => ({ ...e, isNew: false })),
         toastOption,
       ];
     };
-    setTimeout(() => {
-      this.toast.at(-1)!.isNew = false;
-      this.setToast([...this.toast]);
-    },700);
     this.setToast(this.toast);
   }
 

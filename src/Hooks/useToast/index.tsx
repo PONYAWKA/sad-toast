@@ -4,6 +4,8 @@ import { createPortal } from "react-dom";
 import { ToastManager } from "utils/singleton";
 import ErrorBoundary from "components/ErrorBoundary";
 import { ToastOptionType } from "Types/ToastOptionType";
+import { ThemeProvider } from "styled-components";
+import { theme } from "utils/theme";
 
 export const useToast = () => {
   const [ToastList, setToastList] = useState<ToastOptionType[]>([]);
@@ -11,9 +13,11 @@ export const useToast = () => {
   return {
     Toast: () =>
       createPortal(
-        <ErrorBoundary>
-          <ToastContainer options={ToastList} />
-        </ErrorBoundary>,
+        <ThemeProvider theme={theme}>
+          <ErrorBoundary>
+            <ToastContainer options={ToastList} />
+          </ErrorBoundary>
+        </ThemeProvider>,
         document.body
       ),
   };

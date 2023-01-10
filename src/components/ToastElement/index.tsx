@@ -33,7 +33,7 @@ export const ToastElement = (options: ToastOptionElementType) => {
   };
 
   const handleDragStart = (e: React.SyntheticEvent) => {
-    setTimeout(() => setOpacity(0));
+    setTimeout(() => setOpacity(0), 1);
   };
 
   return (
