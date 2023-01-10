@@ -21,7 +21,6 @@ export const ElementBody = styled.div<ElementBodyType>`
   height: ${({ theme }) => theme.width.x}px;
   box-sizing: border-box;
   ${({ opacity }) => opacitySwitcher(opacity)};
-  font-size: ${({ theme }) => theme.font.m};
 `;
 
 export const ElementContent = styled.div`
@@ -33,7 +32,7 @@ export const ToastLabel = styled.div``;
 
 export const ToastInfo = styled.div`
   display: flex;
-  word-break: break-all;
+  word-break: break-word;
   align-items: center;
   height: 100%;
   font-size: ${({ theme }) => theme.font.m}px;
