@@ -26,7 +26,7 @@ export const ElementBody = styled.div<ElementBodyType>`
 
 export const ElementContent = styled.div`
   display: flex;
-  word-break: break-all;
+  word-break: break-word;
 `;
 
 export const ToastLabel = styled.div``;
