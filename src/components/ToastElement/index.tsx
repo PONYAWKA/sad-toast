@@ -4,12 +4,12 @@ import {
   ToastInfo,
   ToastLabel,
   ToastTextContainer,
-} from "components/ToastElement/styled";
+} from "components/toastElement/styled";
 import { AnumationType, Positioins, ToastTypes } from "utils/theme";
-import { ToastOptionElementType } from "components/ToastElement/types";
+import { ToastOptionElementType } from "components/toastElement/types";
 import { useState } from "react";
 import { iconSelector } from "utils/helper";
-import { removeToast } from "Hooks/useToast/ToastController";
+import { removeToast } from "hooks/useToast/ToastController";
 export const ToastElement = (options: ToastOptionElementType) => {
   const {
     label = "Toast Lable",

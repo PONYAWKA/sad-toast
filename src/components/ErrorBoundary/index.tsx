@@ -1,6 +1,6 @@
 import { Component, ErrorInfo } from "react";
-import { Props, State } from "components/ErrorBoundary/types";
-import { ErrorTitle } from "./styled";
+import { Props, State } from "components/errorBoundary/types";
+import { ErrorTitle } from "components/errorBoundary/styled";
 
 class ErrorBoundary extends Component<Props, State> {
   public state: State = {

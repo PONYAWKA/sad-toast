@@ -1,4 +1,4 @@
-import { ToastConigType } from "Types/ToastOptionType";
+import { ToastConigType } from "types/ToastOptionType";
 import { ToastExamplePage } from ".";
 
 export default {

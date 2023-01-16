@@ -1,4 +1,4 @@
-import { ToastConigType } from "Types/ToastOptionType";
+import { ToastConigType } from "types/ToastOptionType";
 import { nanoid } from "nanoid";
 import { ToastManager } from "utils/singleton";
 

@@ -2,7 +2,7 @@ import { CSSProp } from "styled-components";
 import {
   PositionFunctionReturnType,
   ToastOptionType,
-} from "Types/ToastOptionType";
+} from "types/ToastOptionType";
 
 export interface ElementBodyType {
   position: PositionFunctionReturnType;

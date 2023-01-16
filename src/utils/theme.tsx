@@ -1,5 +1,5 @@
 import { css } from "styled-components";
-import { PositionFunctionReturnType } from "Types/ToastOptionType";
+import { PositionFunctionReturnType } from "types/ToastOptionType";
 import info from "icons/info.svg";
 import error from "icons/error.svg";
 import warning from "icons/warning.svg";

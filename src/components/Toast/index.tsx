@@ -1,6 +1,6 @@
-import { ToastElement } from "components/ToastElement";
-import { ToastOptionType } from "Types/ToastOptionType";
-import { ToastBody } from "components/Toast/styled";
+import { ToastElement } from "components/toastElement";
+import { ToastOptionType } from "types/ToastOptionType";
+import { ToastBody } from "components/toast/styled";
 
 interface IToastContainer {
   options: ToastOptionType[];
@@ -17,7 +17,6 @@ export const ToastContainer = ({ options }: IToastContainer) => {
     <ToastBody>
       {options.map((currentOption: ToastOptionType) => {
         const { position } = currentOption;
-  
         return (
           <ToastElement
             key={currentOption.id}

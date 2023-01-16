@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { ElementBodyType } from "components/ToastElement/types";
+import { ElementBodyType } from "components/toastElement/types";
 import { opacitySwitcher } from "utils/helper";
 
 export const ElementBody = styled.div<ElementBodyType>`
