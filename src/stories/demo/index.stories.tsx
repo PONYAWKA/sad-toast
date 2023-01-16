@@ -1,4 +1,5 @@
-import { ToastConigType } from "types/ToastOptionType";
+import { ToastConfigType } from "types/ToastOptionType";
+
 import { ToastExamplePage } from ".";
 
 export default {
@@ -16,10 +17,10 @@ export default {
     animation: {
       options: ["leftToRight", "rightToLeft", "fade"],
       control: { type: "radio" },
-    }
+    },
   },
 };
 
-const Teamplate = (args: ToastConigType) => <ToastExamplePage {...args} />;
+const Template = (args: ToastConfigType) => <ToastExamplePage {...args} />;
 
-export const Default = Teamplate.bind({});
+export const Default = Template.bind({});

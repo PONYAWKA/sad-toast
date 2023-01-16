@@ -6,10 +6,11 @@ module.exports = {
     config.resolve.alias = {
       ...config.resolve.alias,
       components: path.resolve(__dirname, "../src/components"),
-      Hooks: path.resolve(__dirname, "../src/Hooks"),
+      theme: path.resolve(__dirname, "../src/theme"),
       utils: path.resolve(__dirname, "../src/utils"),
-      Types: path.resolve(__dirname, "../src/Types"),
+      types: path.resolve(__dirname, "../src/types"),
       icons: path.resolve(__dirname, "../src/components/icons"),
+      assets: path.resolve(__dirname, "../src/assets"),
     };
     return config;
   },

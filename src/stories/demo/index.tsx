@@ -1,19 +1,21 @@
-import { useToast } from "hooks/useToast";
-import { addToast, removeToast } from "hooks/useToast/ToastController";
-import { ToastConigType} from "types/ToastOptionType";
-export const ToastExamplePage = (props: ToastConigType) => {
+import { Toast } from "components/toastContainer";
+import {
+  addToast,
+  removeToast,
+} from "components/toastContainer/ToastController";
+import { ToastConfigType } from "types/ToastOptionType";
+export const ToastExamplePage = (props: ToastConfigType) => {
   const {
-    label ,
-    text ,
-    paddings ,
+    label,
+    text,
+    paddings,
     animation,
-    type ,
-    margin ,
+    type,
+    margin,
     duration,
     position,
     color,
   } = props;
-  const { Toast } = useToast();
   const addToastHandler = () => {
     addToast({
       text: text,
@@ -24,7 +26,7 @@ export const ToastExamplePage = (props: ToastConigType) => {
       label: label,
       type: type,
       margin: margin,
-      color: color
+      color: color,
     });
   };
 

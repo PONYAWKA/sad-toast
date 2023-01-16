@@ -1,13 +1,13 @@
-import { Component, ErrorInfo } from "react";
-import { Props, State } from "components/errorBoundary/types";
+import { Props, State } from "components/errorBoundary/interfaces";
 import { ErrorTitle } from "components/errorBoundary/styled";
+import { Component, ErrorInfo } from "react";
 
 class ErrorBoundary extends Component<Props, State> {
   public state: State = {
     hasError: false,
   };
 
-  public static getDerivedStateFromError(_: Error): State {
+  public static getDerivedStateFromError(): State {
     return { hasError: true };
   }
 
@@ -17,7 +17,7 @@ class ErrorBoundary extends Component<Props, State> {
 
   public render() {
     if (this.state.hasError) {
-      return <ErrorTitle>"Sorry.. there was an error"</ErrorTitle>;
+      return <ErrorTitle>Sorry.. there was an error</ErrorTitle>;
     }
 
     return this.props.children;

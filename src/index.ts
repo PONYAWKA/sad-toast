@@ -1,3 +1,6 @@
-import { useToast } from "hooks/useToast/index";
-import { addToast, removeToast } from "hooks/useToast/ToastController";
-export { useToast, addToast, removeToast };
+import { Toast } from "components/toastContainer/index";
+import {
+  addToast,
+  removeToast,
+} from "components/toastContainer/ToastController";
+export { addToast, removeToast, Toast };

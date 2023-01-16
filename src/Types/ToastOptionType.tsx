@@ -1,29 +1,31 @@
+import { AnimationKey, toastTypeKey } from "utils/themeTypes";
+
 export interface ToastOptionType {
   duration: number;
   label: string;
   paddings: number;
-  animation: string;
+  animation: AnimationKey;
   text: string;
   position: string;
   id: string;
   isNew: boolean;
-  type: string;
+  type: toastTypeKey;
   margin: number;
   color: string;
 }
-export interface ToastConigType {
+export interface ToastConfigType {
   duration: number;
   label: string;
   margin: number;
   text: string;
   paddings: number;
-  animation: string;
+  animation: AnimationKey;
   position: string;
-  type: string;
+  type: toastTypeKey;
   color: string;
 }
 
 export interface PositionFunctionReturnType {
-  x:string,
-  y:string,
+  x: string;
+  y: string;
 }

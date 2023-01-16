@@ -53,11 +53,11 @@ export default [
           },
           {
             find: "Hooks",
-            replacement: path.resolve(__dirname, "src/Hooks"),
+            replacement: path.resolve(__dirname, "src/hooks"),
           },
           {
             find: "Types",
-            replacement: path.resolve(__dirname, "src/Types"),
+            replacement: path.resolve(__dirname, "src/types"),
           },
           {
             find: "utils",

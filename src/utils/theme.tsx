@@ -1,55 +1,49 @@
-import { css } from "styled-components";
+import error from "assets/icons/error.svg";
+import info from "assets/icons/info.svg";
+import success from "assets/icons/success.svg";
+import warning from "assets/icons/warning.svg";
+import { css, FlattenSimpleInterpolation } from "styled-components";
 import { PositionFunctionReturnType } from "types/ToastOptionType";
-import info from "icons/info.svg";
-import error from "icons/error.svg";
-import warning from "icons/warning.svg";
-import success from "icons/success.svg";
 
-export const Positioins = {
-  LeftTop: (
-    mul: number = 0,
-    margin: number = 0
-  ): PositionFunctionReturnType => ({
+import { AnimationKey, positionsKey, toastTypeKey } from "./themeTypes";
+
+export const Positions: Record<
+  positionsKey,
+  (mul: number, margin: number) => PositionFunctionReturnType
+> = {
+  LeftTop: (mul = 0, margin = 0): PositionFunctionReturnType => ({
     x: `top: ${mul * 100 + margin}px`,
     y: "left: 1%;",
   }),
-  LeftBottom: (
-    mul: number = 0,
-    margin: number = 0
-  ): PositionFunctionReturnType => ({
+  LeftBottom: (mul = 0, margin = 0): PositionFunctionReturnType => ({
     x: `bottom: ${mul * 100 + margin}px;`,
     y: "left: 1%;",
   }),
-  RightTop: (
-    mul: number = 0,
-    margin: number = 0
-  ): PositionFunctionReturnType => ({
+  RightTop: (mul = 0, margin = 0): PositionFunctionReturnType => ({
     x: `top: ${mul * 100 + margin}px;`,
     y: "right: 1%;",
   }),
-  RightBottom: (
-    mul: number = 0,
-    margin: number = 0
-  ): PositionFunctionReturnType => ({
+  RightBottom: (mul = 0, margin = 0): PositionFunctionReturnType => ({
     x: `bottom: ${mul * 100 + margin}px;`,
     y: "right: 1%;",
   }),
 };
 
-export const ToastTypes = {
+export const toastTypes: Record<toastTypeKey, string> = {
   warning: "#f0ad4e",
   info: "#5bc0de",
   error: "#d9534f",
   success: "#5cb85c",
 };
+
 export const iconType = {
-  warning: warning,
-  info: info,
-  error: error,
-  success: success,
+  warning,
+  info,
+  error,
+  success,
 };
 
-export const AnumationType = {
+export const animationType: Record<AnimationKey, FlattenSimpleInterpolation> = {
   leftToRight: css`
     @keyframes ani {
       0% {
@@ -80,33 +74,4 @@ export const AnumationType = {
       }
     }
   `,
-};
-
-const width = {
-  s: 20,
-  m: 40,
-  x: 100,
-  xxxl: 400,
-};
-const height = {
-  s: 20,
-  m: 40,
-  x: 100,
-};
-const font = {
-  m: 36,
-};
-const margin = {
-  s: 5,
-  m: 20,
-};
-const borderRadius = {
-  m: 20,
-};
-export const theme = {
-  width,
-  height,
-  font,
-  margin,
-  borderRadius,
 };

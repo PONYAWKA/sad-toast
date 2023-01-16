@@ -1,18 +1,19 @@
+import { removeToast } from "components/toastContainer/ToastController";
+import { ToastOptionElementType } from "components/toastElement/interfaces";
 import {
+  CloseButton,
   ElementBody,
   Icon,
   ToastInfo,
   ToastLabel,
   ToastTextContainer,
 } from "components/toastElement/styled";
-import { AnumationType, Positioins, ToastTypes } from "utils/theme";
-import { ToastOptionElementType } from "components/toastElement/types";
-import { useState } from "react";
-import { iconSelector } from "utils/helper";
-import { removeToast } from "hooks/useToast/ToastController";
+import { SyntheticEvent, useState } from "react";
+import { animationType, iconType, Positions, toastTypes } from "utils/theme";
+
 export const ToastElement = (options: ToastOptionElementType) => {
   const {
-    label = "Toast Lable",
+    label = "Toast Label",
     text = "some text",
     id,
     paddings = 20,
@@ -27,12 +28,12 @@ export const ToastElement = (options: ToastOptionElementType) => {
 
   const [opacity, setOpacity] = useState(1);
 
-  const handleDragEnd = (e: React.SyntheticEvent) => {
+  const handleClose = (e: SyntheticEvent) => {
     e.preventDefault();
     removeToast(id);
   };
 
-  const handleDragStart = (e: React.SyntheticEvent) => {
+  const handleDragStart = () => {
     setTimeout(() => setOpacity(0), 1);
   };
 
@@ -40,19 +41,24 @@ export const ToastElement = (options: ToastOptionElementType) => {
     <ElementBody
       opacity={opacity}
       isNew={isNew}
-      animation={AnumationType[animation as keyof typeof AnumationType]}
-      type={color ?? ToastTypes[type as keyof typeof ToastTypes]}
+      animation={animationType[animation]}
+      type={color ?? toastTypes[type]}
       padding={paddings}
       margin={margin}
-      position={Positioins[position as keyof typeof Positioins](
+      position={Positions[position as keyof typeof Positions](
         mul,
         mul * margin
       )}
       draggable
-      onDragEnd={handleDragEnd}
+      onDragEnd={handleClose}
       onDragStart={handleDragStart}
     >
-      <Icon src={iconSelector(type)} width={64} alt="error" />
+      <CloseButton onClick={handleClose}> X </CloseButton>
+      <Icon
+        src={iconType[type as keyof typeof iconType]}
+        width={64}
+        alt="error"
+      />
       <ToastTextContainer>
         <ToastLabel>{label}</ToastLabel>
         <ToastInfo>{text}</ToastInfo>

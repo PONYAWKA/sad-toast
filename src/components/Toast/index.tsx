@@ -1,18 +1,18 @@
-import { ToastElement } from "components/toastElement";
-import { ToastOptionType } from "types/ToastOptionType";
 import { ToastBody } from "components/toast/styled";
+import { ToastElement } from "components/toastElement";
+import { memo } from "react";
+import { ToastOptionType } from "types/ToastOptionType";
 
-interface IToastContainer {
-  options: ToastOptionType[];
-}
+import { IToastContainer } from "./interfaces";
 
-export const ToastContainer = ({ options }: IToastContainer) => {
-  const op = {
+const index = ({ options }: IToastContainer) => {
+  const toastPosition = {
     LeftTop: 0,
     LeftBottom: 0,
     RightTop: 0,
     RightBottom: 0,
   };
+
   return (
     <ToastBody>
       {options.map((currentOption: ToastOptionType) => {
@@ -20,7 +20,7 @@ export const ToastContainer = ({ options }: IToastContainer) => {
         return (
           <ToastElement
             key={currentOption.id}
-            mul={op[position as keyof typeof op]++}
+            mul={toastPosition[position as keyof typeof toastPosition]++}
             {...currentOption}
           />
         );
@@ -28,3 +28,5 @@ export const ToastContainer = ({ options }: IToastContainer) => {
     </ToastBody>
   );
 };
+
+export const ToastContainer = memo(index);
