@@ -45,20 +45,13 @@ export const ToastElement = (options: ToastOptionElementType) => {
       type={color ?? toastTypes[type]}
       padding={paddings}
       margin={margin}
-      position={Positions[position as keyof typeof Positions](
-        mul,
-        mul * margin
-      )}
+      position={Positions[position](mul, mul * margin)}
       draggable
       onDragEnd={handleClose}
       onDragStart={handleDragStart}
     >
       <CloseButton onClick={handleClose}> X </CloseButton>
-      <Icon
-        src={iconType[type as keyof typeof iconType]}
-        width={64}
-        alt="error"
-      />
+      <Icon src={iconType[type]} width={64} alt="error" />
       <ToastTextContainer>
         <ToastLabel>{label}</ToastLabel>
         <ToastInfo>{text}</ToastInfo>

@@ -1,4 +1,4 @@
-import { AnimationKey, toastTypeKey } from "utils/themeTypes";
+import { AnimationKey, positionsKey, toastTypeKey } from "utils/themeTypes";
 
 export interface ToastOptionType {
   duration: number;
@@ -6,7 +6,7 @@ export interface ToastOptionType {
   paddings: number;
   animation: AnimationKey;
   text: string;
-  position: string;
+  position: positionsKey;
   id: string;
   isNew: boolean;
   type: toastTypeKey;
@@ -20,7 +20,7 @@ export interface ToastConfigType {
   text: string;
   paddings: number;
   animation: AnimationKey;
-  position: string;
+  position: positionsKey;
   type: toastTypeKey;
   color: string;
 }
