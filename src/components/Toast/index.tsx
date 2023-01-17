@@ -1,32 +1,12 @@
-import { ToastBody } from "components/toast/styled";
-import { ToastElement } from "components/toastElement";
-import { memo } from "react";
-import { ToastOptionType } from "types/ToastOptionType";
+import { useEffect, useState } from "react";
 
-import { IToastContainer } from "./interfaces";
+import { ToastContainer } from "@/components/ToastContainer/index";
+import { ToastOptionType } from "@/types/ToastOptionType";
+import { ToastManager } from "@/types/utils/singleton";
 
-const index = ({ options }: IToastContainer) => {
-  const toastPosition = {
-    LeftTop: 0,
-    LeftBottom: 0,
-    RightTop: 0,
-    RightBottom: 0,
-  };
+export const Toast = () => {
+  const [ToastList, setToastList] = useState<ToastOptionType[]>([]);
+  useEffect(() => ToastManager.init(setToastList), []);
 
-  return (
-    <ToastBody>
-      {options.map((currentOption: ToastOptionType) => {
-        const { position } = currentOption;
-        return (
-          <ToastElement
-            key={currentOption.id}
-            mul={toastPosition[position as keyof typeof toastPosition]++}
-            {...currentOption}
-          />
-        );
-      })}
-    </ToastBody>
-  );
+  return <ToastContainer options={ToastList} />;
 };
-
-export const ToastContainer = memo(index);

@@ -30,7 +30,7 @@
   },
   "scripts": {
     "lint": "npx eslint ./src --ext .ts,.tsx",
-    "lint:fix": "npx eslint ./src --ext .ts, .tsx --fix",
+    "lint:fix": "npx eslint ./src --ext .ts,.tsx --fix",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
     "rollup": "rollup -c --bundleConfigAsCjs"

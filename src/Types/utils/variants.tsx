@@ -1,7 +1,7 @@
 import { css, FlattenSimpleInterpolation } from "styled-components";
+import { PositionFunctionReturnType } from "types/ToastOptionType";
 
-import { PositionFunctionReturnType } from "@/types/ToastOptionType";
-import { AnimationKey, positionsKey } from "@/utils/themeTypes";
+import { AnimationKey, positionsKey } from "./themeTypes";
 
 export const Positions: Record<
   positionsKey,

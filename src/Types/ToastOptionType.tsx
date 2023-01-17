@@ -1,4 +1,8 @@
-import { AnimationKey, positionsKey, toastTypeKey } from "utils/themeTypes";
+import {
+  AnimationKey,
+  positionsKey,
+  toastTypeKey,
+} from "types/utils/themeTypes";
 
 export interface ToastOptionType {
   duration: number;

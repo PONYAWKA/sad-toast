@@ -1,5 +1,7 @@
-import { removeToast } from "components/toastContainer/ToastController";
-import { ToastOptionElementType } from "components/toastElement/interfaces";
+import { SyntheticEvent, useState } from "react";
+
+import { removeToast } from "@/components/Toast/ToastController";
+import { ToastOptionElementType } from "@/components/ToastElement/interfaces";
 import {
   CloseButton,
   ElementBody,
@@ -7,10 +9,9 @@ import {
   ToastInfo,
   ToastLabel,
   ToastTextContainer,
-} from "components/toastElement/styled";
-import { iconType, toastTypes } from "constants";
-import { SyntheticEvent, useState } from "react";
-import { animationType, Positions } from "utils/variants";
+} from "@/components/ToastElement/styled";
+import { iconType, toastTypes } from "@/constants/index";
+import { animationType, Positions } from "@/types/utils/variants";
 
 export const ToastElement = (options: ToastOptionElementType) => {
   const {

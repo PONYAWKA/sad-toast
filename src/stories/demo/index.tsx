@@ -1,9 +1,7 @@
-import { Toast } from "components/toastContainer";
-import {
-  addToast,
-  removeToast,
-} from "components/toastContainer/ToastController";
 import { ToastConfigType } from "types/ToastOptionType";
+
+import { Toast } from "@/components/Toast";
+import { addToast, removeToast } from "@/components/Toast/ToastController";
 export const ToastExamplePage = (props: ToastConfigType) => {
   const {
     label,

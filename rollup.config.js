@@ -1,12 +1,12 @@
-import resolve from "@rollup/plugin-node-resolve";
-import commonjs from "@rollup/plugin-commonjs";
-import peerDepsExternal from "rollup-plugin-peer-deps-external";
-import typescript from "@rollup/plugin-typescript";
 import alias from "@rollup/plugin-alias";
-import image from "@rollup/plugin-image";
-import { fileURLToPath } from "url";
 import { babel } from "@rollup/plugin-babel";
+import commonjs from "@rollup/plugin-commonjs";
+import image from "@rollup/plugin-image";
+import resolve from "@rollup/plugin-node-resolve";
+import typescript from "@rollup/plugin-typescript";
 import path from "path";
+import peerDepsExternal from "rollup-plugin-peer-deps-external";
+import { fileURLToPath } from "url";
 
 const __filename = fileURLToPath(import.meta.url);
 
@@ -16,7 +16,6 @@ const Resolver = resolve({
   extensions: [".mjs", ".ts", ".tsx", ".json", ".js", ".jsx"],
   browser: true,
 });
-// eslint-disable-next-line import/no-anonymous-default-export
 export default [
   {
     input: "src/index.ts",
@@ -66,6 +65,10 @@ export default [
           {
             find: "icons",
             replacement: path.resolve(__dirname, "src/components/icons"),
+          },
+          {
+            find: "@",
+            replacement: path.resolve(__dirname, "src"),
           },
         ],
         Resolver,

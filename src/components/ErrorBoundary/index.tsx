@@ -1,6 +1,7 @@
-import { Props, State } from "components/errorBoundary/interfaces";
-import { ErrorTitle } from "components/errorBoundary/styled";
 import { Component, ErrorInfo } from "react";
+
+import { Props, State } from "@/components/ErrorBoundary/interfaces";
+import { ErrorTitle } from "@/components/ErrorBoundary/styled";
 
 class ErrorBoundary extends Component<Props, State> {
   public state: State = {

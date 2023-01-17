@@ -1,5 +1,6 @@
-import { ElementBodyType } from "components/toastElement/interfaces";
 import styled, { css } from "styled-components";
+
+import { ElementBodyType } from "@/components/ToastElement/interfaces";
 
 export const ElementBody = styled.div<ElementBodyType>`
   position: absolute;

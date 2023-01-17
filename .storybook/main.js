@@ -11,6 +11,7 @@ module.exports = {
       types: path.resolve(__dirname, "../src/types"),
       icons: path.resolve(__dirname, "../src/components/icons"),
       assets: path.resolve(__dirname, "../src/assets"),
+      ["@"]: path.resolve(__dirname, "../src"),
     };
     return config;
   },

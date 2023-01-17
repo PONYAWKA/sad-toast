@@ -1,4 +1,4 @@
-import { ToastOptionType } from "@/types/ToastOptionType";
+import { ToastOptionType } from "types/ToastOptionType";
 
 class ToastService {
   private static instance: ToastService;

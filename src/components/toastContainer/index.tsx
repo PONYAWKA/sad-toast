@@ -1,22 +1,41 @@
-import ErrorBoundary from "components/errorBoundary";
-import { ToastContainer } from "components/toast/index";
-import { useEffect, useState } from "react";
+import { memo } from "react";
 import { createPortal } from "react-dom";
 import { ThemeProvider } from "styled-components";
-import { theme } from "theme/index";
 import { ToastOptionType } from "types/ToastOptionType";
-import { ToastManager } from "utils/singleton";
 
-export const Toast = () => {
-  const [ToastList, setToastList] = useState<ToastOptionType[]>([]);
-  useEffect(() => ToastManager.init(setToastList), []);
+import ErrorBoundary from "@/components/ErrorBoundary/index";
+import { IToastContainer } from "@/components/ToastContainer/interfaces";
+import { ToastBody } from "@/components/ToastContainer/styled";
+import { ToastElement } from "@/components/ToastElement";
+import { theme } from "@/theme/index";
+
+const index = ({ options }: IToastContainer) => {
+  const toastPosition = {
+    LeftTop: 0,
+    LeftBottom: 0,
+    RightTop: 0,
+    RightBottom: 0,
+  };
 
   return createPortal(
     <ThemeProvider theme={theme}>
       <ErrorBoundary>
-        <ToastContainer options={ToastList} />
+        <ToastBody>
+          {options.map((currentOption: ToastOptionType) => {
+            const { position, id } = currentOption;
+            return (
+              <ToastElement
+                key={id}
+                mul={toastPosition[position]++}
+                {...currentOption}
+              />
+            );
+          })}
+        </ToastBody>
       </ErrorBoundary>
     </ThemeProvider>,
     document.body
   );
 };
+
+export const ToastContainer = memo(index);

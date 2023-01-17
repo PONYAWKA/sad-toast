@@ -10,6 +10,7 @@ const font = {
 };
 const colors = {
   white: "#ffffff",
+  info: "#f0ad4e",
 };
 export const theme = {
   spaces,
