@@ -11,13 +11,13 @@ export const ElementBody = styled.div<ElementBodyType>`
   ${({ position }) => position.x};
   ${({ position }) => position.y};
   color: ${({ theme }) => theme.colors.white};
-  border-radius: ${({ theme }) => theme.borderRadius.m}px;
+  border-radius: ${({ theme }) => theme.spaces.s}px;
   padding: ${({ padding }) => padding}px;
-  margin: ${({ margin }) => margin}px ${({ theme }) => theme.margin.s}px;
+  margin: ${({ margin }) => margin}px ${({ theme }) => theme.spaces.ss}px;
   animation: ${({ isNew }) => (isNew ? css`ani .7s forwards` : css``)};
   ${({ animation }) => animation};
-  width: ${({ theme }) => theme.width.xxxl}px;
-  height: ${({ theme }) => theme.width.x}px;
+  width: ${({ theme }) => theme.spaces.xxxl}px;
+  height: ${({ theme }) => theme.spaces.x}px;
   box-sizing: border-box;
   ${({ opacity }) =>
     !opacity
@@ -47,7 +47,7 @@ export const ToastTextContainer = styled.div`
   flex-direction: column;
 `;
 export const Icon = styled.img`
-  margin-right: ${({ theme }) => theme.margin.m}px;
+  margin-right: ${({ theme }) => theme.spaces.m}px;
 `;
 
 export const CloseButton = styled.button`

@@ -8,8 +8,9 @@ import {
   ToastLabel,
   ToastTextContainer,
 } from "components/toastElement/styled";
+import { iconType, toastTypes } from "constants";
 import { SyntheticEvent, useState } from "react";
-import { animationType, iconType, Positions, toastTypes } from "utils/theme";
+import { animationType, Positions } from "utils/variants";
 
 export const ToastElement = (options: ToastOptionElementType) => {
   const {
@@ -51,7 +52,12 @@ export const ToastElement = (options: ToastOptionElementType) => {
       onDragStart={handleDragStart}
     >
       <CloseButton onClick={handleClose}> X </CloseButton>
-      <Icon src={iconType[type]} width={64} alt="error" />
+      <Icon
+        src={iconType[type]}
+        title={`${type} icon`}
+        width={64}
+        alt="Loading..."
+      />
       <ToastTextContainer>
         <ToastLabel>{label}</ToastLabel>
         <ToastInfo>{text}</ToastInfo>
