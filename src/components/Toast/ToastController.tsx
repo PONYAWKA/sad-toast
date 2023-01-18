@@ -1,7 +1,7 @@
 import { nanoid } from "nanoid";
 
+import { ToastManager } from "@/services/singleton";
 import { ToastConfigType } from "@/types/ToastOptionType";
-import { ToastManager } from "@/types/utils/singleton";
 
 export const removeToast = (id?: string) => {
   ToastManager.removeToast(id);

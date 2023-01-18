@@ -1,12 +1,13 @@
-import { useEffect, useState } from "react";
+import { MutableRefObject, useEffect, useRef } from "react";
 
 import { ToastContainer } from "@/components/ToastContainer/index";
-import { ToastOptionType } from "@/types/ToastOptionType";
-import { ToastManager } from "@/types/utils/singleton";
+import { ItoastRef } from "@/services/interfaces";
+import { ToastManager } from "@/services/singleton";
 
 export const Toast = () => {
-  const [ToastList, setToastList] = useState<ToastOptionType[]>([]);
-  useEffect(() => ToastManager.init(setToastList), []);
+  const ref = useRef() as MutableRefObject<HTMLDivElement> & ItoastRef;
 
-  return <ToastContainer options={ToastList} />;
+  useEffect(() => ToastManager.init(ref), []);
+
+  return <ToastContainer ref={ref} />;
 };

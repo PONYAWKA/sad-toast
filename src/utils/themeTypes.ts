@@ -4,4 +4,4 @@ export type positionsKey =
   | "LeftBottom"
   | "RightTop"
   | "RightBottom";
-export type AnimationKey = "leftToRight" | "rightToLeft" | "fade";
+export type animationKey = "leftToRight" | "rightToLeft" | "fade";

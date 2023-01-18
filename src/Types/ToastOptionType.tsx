@@ -1,14 +1,12 @@
-import {
-  AnimationKey,
-  positionsKey,
-  toastTypeKey,
-} from "types/utils/themeTypes";
+import { ReactNode } from "react";
+
+import { animationKey, positionsKey, toastTypeKey } from "@/utils/themeTypes";
 
 export interface ToastOptionType {
   duration: number;
   label: string;
   paddings: number;
-  animation: AnimationKey;
+  animation: animationKey;
   text: string;
   position: positionsKey;
   id: string;
@@ -23,7 +21,7 @@ export interface ToastConfigType {
   margin: number;
   text: string;
   paddings: number;
-  animation: AnimationKey;
+  animation: animationKey;
   position: positionsKey;
   type: toastTypeKey;
   color: string;
@@ -32,4 +30,8 @@ export interface ToastConfigType {
 export interface PositionFunctionReturnType {
   x: string;
   y: string;
+}
+
+export interface refType {
+  current: ReactNode;
 }

@@ -11,7 +11,7 @@ import {
   ToastTextContainer,
 } from "@/components/ToastElement/styled";
 import { iconType, toastTypes } from "@/constants/index";
-import { animationType, Positions } from "@/types/utils/variants";
+import { animationType, Positions } from "@/utils/variants";
 
 export const ToastElement = (options: ToastOptionElementType) => {
   const {

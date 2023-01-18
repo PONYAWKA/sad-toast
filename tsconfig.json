@@ -24,6 +24,8 @@
       "@/assets/*": ["assets/*"],
       "@/theme/*": ["theme/*"],
       "@/utils/*": ["utils/*"],
+      "@/services/*": ["services/*"],
+      "@/hooks/*": ["hooks/*"],
     },
     "declaration": true,
     "declarationDir": "types",

@@ -1,7 +1,7 @@
 import { css, FlattenSimpleInterpolation } from "styled-components";
+import { PositionFunctionReturnType } from "types/ToastOptionType";
 
-import { PositionFunctionReturnType } from "@/types/ToastOptionType";
-import { AnimationKey, positionsKey } from "@/utils/themeTypes";
+import { animationKey, positionsKey } from "./themeTypes";
 
 export const Positions: Record<
   positionsKey,
@@ -25,7 +25,7 @@ export const Positions: Record<
   }),
 };
 
-export const animationType: Record<AnimationKey, FlattenSimpleInterpolation> = {
+export const animationType: Record<animationKey, FlattenSimpleInterpolation> = {
   leftToRight: css`
     @keyframes ani {
       0% {

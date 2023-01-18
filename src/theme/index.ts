@@ -8,9 +8,12 @@ const spaces = {
 const font = {
   m: 36,
 };
-const colors = {
+export const colors = {
   white: "#ffffff",
-  info: "#f0ad4e",
+  yellow: "#f0ad4e",
+  blue: "#5bc0de",
+  green: "#5cb85c",
+  red: "#d9534f",
 };
 export const theme = {
   spaces,

@@ -1,11 +1,16 @@
+import { ItoastRef } from "@/services/interfaces";
 import { ToastOptionType } from "@/types/ToastOptionType";
 
 class ToastService {
   private static instance: ToastService;
 
   toast: ToastOptionType[] = [];
-  setToast: (arg: ToastOptionType[]) => void = () => {
-    return;
+  toastRef: ItoastRef = {
+    current: {
+      setToast: () => {
+        return;
+      },
+    },
   };
   static setInstance(): ToastService {
     if (!ToastService.instance) {
@@ -13,8 +18,9 @@ class ToastService {
     }
     return this.instance;
   }
-  init(setToast: (arg: ToastOptionType[]) => void) {
-    this.setToast = setToast;
+
+  init(ref: ItoastRef) {
+    this.toastRef = ref;
   }
 
   addToast(toastOption: ToastOptionType) {
@@ -24,7 +30,7 @@ class ToastService {
         toastOption,
       ];
     }
-    this.setToast(this.toast);
+    this.toastRef.current.setToast(this.toast);
   }
 
   getToast() {
@@ -39,7 +45,7 @@ class ToastService {
       this.toast.pop();
     }
 
-    this.setToast([...this.toast]);
+    this?.toastRef.current.setToast([...this.toast]);
   }
 }
 
