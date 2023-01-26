@@ -3,8 +3,7 @@ import info from "assets/icons/info.svg";
 import success from "assets/icons/success.svg";
 import warning from "assets/icons/warning.svg";
 
-import { colors } from "@/theme/index";
-import { toastTypeKey } from "@/utils/themeTypes";
+import { colors, toastTypeKey } from "@/theme/index";
 
 export const toastTypes: Record<toastTypeKey, string> = {
   warning: colors.yellow,

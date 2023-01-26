@@ -11,7 +11,7 @@
     "noFallthroughCasesInSwitch": true,
     "module": "esnext",
     "moduleResolution": "node",
-    "typeRoots": ["./src/globals.d.ts"],
+    "typeRoots": ["src/extensions.d.ts"],
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
