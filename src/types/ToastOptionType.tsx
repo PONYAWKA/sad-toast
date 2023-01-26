@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 
-import { animationKey, positionsKey, toastTypeKey } from "@/utils/themeTypes";
+import { animationKey, positionsKey, toastTypeKey } from "@/theme/index";
 
 export interface ToastOptionType {
   duration: number;

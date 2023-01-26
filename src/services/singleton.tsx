@@ -1,11 +1,11 @@
-import { ItoastRef } from "@/services/interfaces";
+import { IToastRef } from "@/services/interfaces";
 import { ToastOptionType } from "@/types/ToastOptionType";
 
 class ToastService {
   private static instance: ToastService;
 
   toast: ToastOptionType[] = [];
-  toastRef: ItoastRef = {
+  toastRef: IToastRef = {
     current: {
       setToast: () => {
         return;
@@ -19,7 +19,7 @@ class ToastService {
     return this.instance;
   }
 
-  init(ref: ItoastRef) {
+  init(ref: IToastRef) {
     this.toastRef = ref;
   }
 
