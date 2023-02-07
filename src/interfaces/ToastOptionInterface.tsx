@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 
 import { animationKey, positionsKey, toastTypeKey } from "@/theme/index";
 
-export interface ToastOptionType {
+export interface ToastOptionInterface {
   duration: number;
   label: string;
   paddings: number;
@@ -15,7 +15,7 @@ export interface ToastOptionType {
   margin: number;
   color: string;
 }
-export interface ToastConfigType {
+export interface ToastConfigInterface {
   duration: number;
   label: string;
   margin: number;

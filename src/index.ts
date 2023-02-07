@@ -1,3 +1,4 @@
 import { Toast } from "@/components/Toast/index";
-import { addToast, removeToast } from "@/components/Toast/ToastController";
+import { addToast } from "@/helpers/addToast";
+import { removeToast } from "@/helpers/removeToast";
 export { addToast, removeToast, Toast };

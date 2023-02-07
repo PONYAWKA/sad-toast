@@ -1,8 +1,8 @@
-import { ToastConfigType } from "types/ToastOptionType";
-
 import { Toast } from "@/components/Toast";
-import { addToast, removeToast } from "@/components/Toast/ToastController";
-export const ToastExamplePage = (props: ToastConfigType) => {
+import { addToast } from "@/helpers/addToast";
+import { removeToast } from "@/helpers/removeToast";
+import { ToastConfigInterface } from "@/interfaces/ToastOptionInterface";
+export const ToastExamplePage = (props: ToastConfigInterface) => {
   const {
     label,
     text,

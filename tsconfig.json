@@ -18,14 +18,7 @@
     "jsx": "react-jsx",
     "baseUrl": "./src",
     "paths": {
-      "@/components/*": ["components/*"],
-      "@/constants/*": ["constants/*"],
-      "@/types/*": ["types/*"],
-      "@/assets/*": ["assets/*"],
-      "@/theme/*": ["theme/*"],
-      "@/utils/*": ["utils/*"],
-      "@/services/*": ["services/*"],
-      "@/hooks/*": ["hooks/*"],
+      "@/*": ["./*"]
     },
     "declaration": true,
     "declarationDir": "types",

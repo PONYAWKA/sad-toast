@@ -1,6 +1,5 @@
 import { SyntheticEvent, useState } from "react";
 
-import { removeToast } from "@/components/Toast/ToastController";
 import { ToastOptionElementType } from "@/components/ToastElement/interfaces";
 import {
   CloseButton,
@@ -11,6 +10,7 @@ import {
   ToastTextContainer,
 } from "@/components/ToastElement/styled";
 import { iconType, toastTypes } from "@/constants/index";
+import { removeToast } from "@/helpers/removeToast";
 import { animationType, Positions } from "@/utils/variants";
 
 export const ToastElement = (options: ToastOptionElementType) => {

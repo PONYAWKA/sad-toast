@@ -1,5 +1,5 @@
-import { ToastOptionType } from "types/ToastOptionType";
+import { ToastOptionInterface } from "@/interfaces/ToastOptionInterface";
 
 export interface IToastContainer {
-  options: ToastOptionType[];
+  options: ToastOptionInterface[];
 }

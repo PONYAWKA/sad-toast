@@ -1,6 +1,6 @@
 import React, { useImperativeHandle, useState } from "react";
 
-import { ToastOptionType } from "@/types/ToastOptionType";
+import { ToastOptionInterface } from "@/interfaces/ToastOptionInterface";
 
 export const useToast = (
   ref:
@@ -9,9 +9,9 @@ export const useToast = (
     | null
     | undefined
 ) => {
-  const [options, setOptions] = useState<ToastOptionType[]>([]);
+  const [options, setOptions] = useState<ToastOptionInterface[]>([]);
 
-  const handleToastAdd = (toast: ToastOptionType[]) => {
+  const handleToastAdd = (toast: ToastOptionInterface[]) => {
     setOptions(toast);
   };
 

@@ -1,5 +1,5 @@
-import { ToastOptionType } from "@/types/ToastOptionType";
+import { ToastOptionInterface } from "@/interfaces/ToastOptionInterface";
 
 export interface IToastRef {
-  current: { setToast: (arg: ToastOptionType[]) => void };
+  current: { setToast: (arg: ToastOptionInterface[]) => void };
 }

@@ -1,10 +1,10 @@
+import { ToastOptionInterface } from "@/interfaces/ToastOptionInterface";
 import { IToastRef } from "@/services/interfaces";
-import { ToastOptionType } from "@/types/ToastOptionType";
 
 class ToastService {
   private static instance: ToastService;
 
-  toast: ToastOptionType[] = [];
+  toast: ToastOptionInterface[] = [];
   toastRef: IToastRef = {
     current: {
       setToast: () => {
@@ -23,7 +23,7 @@ class ToastService {
     this.toastRef = ref;
   }
 
-  addToast(toastOption: ToastOptionType) {
+  addToast(toastOption: ToastOptionInterface) {
     if (this.toast.length < 3) {
       this.toast = [
         ...this.toast.map((e) => ({ ...e, isNew: false })),

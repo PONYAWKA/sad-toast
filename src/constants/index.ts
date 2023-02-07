@@ -1,8 +1,7 @@
-import error from "assets/icons/error.svg";
-import info from "assets/icons/info.svg";
-import success from "assets/icons/success.svg";
-import warning from "assets/icons/warning.svg";
-
+import error from "@/assets/error.svg";
+import info from "@/assets/info.svg";
+import success from "@/assets/success.svg";
+import warning from "@/assets/warning.svg";
 import { colors, toastTypeKey } from "@/theme/index";
 
 export const toastTypes: Record<toastTypeKey, string> = {

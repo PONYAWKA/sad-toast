@@ -1,8 +1,9 @@
 import { CSSProp } from "styled-components";
+
 import {
   PositionFunctionReturnType,
-  ToastOptionType,
-} from "types/ToastOptionType";
+  ToastOptionInterface,
+} from "@/interfaces/ToastOptionInterface";
 
 export interface ElementBodyType {
   position: PositionFunctionReturnType;
@@ -14,6 +15,6 @@ export interface ElementBodyType {
   opacity: number;
 }
 
-export interface ToastOptionElementType extends ToastOptionType {
+export interface ToastOptionElementType extends ToastOptionInterface {
   mul: number;
 }

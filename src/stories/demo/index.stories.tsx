@@ -1,4 +1,4 @@
-import { ToastConfigType } from "types/ToastOptionType";
+import { ToastConfigInterface } from "@/interfaces/ToastOptionInterface";
 
 import { ToastExamplePage } from ".";
 
@@ -21,6 +21,6 @@ export default {
   },
 };
 
-const Template = (args: ToastConfigType) => <ToastExamplePage {...args} />;
+const Template = (args: ToastConfigInterface) => <ToastExamplePage {...args} />;
 
 export const Default = Template.bind({});

@@ -51,11 +51,11 @@ export default [
             replacement: path.resolve(__dirname, "src/components"),
           },
           {
-            find: "Hooks",
+            find: "hooks",
             replacement: path.resolve(__dirname, "src/hooks"),
           },
           {
-            find: "Types",
+            find: "types",
             replacement: path.resolve(__dirname, "src/types"),
           },
           {
@@ -65,6 +65,14 @@ export default [
           {
             find: "icons",
             replacement: path.resolve(__dirname, "src/components/icons"),
+          },
+          {
+            find: "interfaces",
+            replacement: path.resolve(__dirname, "src/interfaces"),
+          },
+          {
+            find: "helpers",
+            replacement: path.resolve(__dirname, "src/helpers"),
           },
           {
             find: "@",

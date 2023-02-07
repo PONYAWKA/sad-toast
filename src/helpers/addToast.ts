@@ -1,13 +1,10 @@
 import { nanoid } from "nanoid";
 
+import { removeToast } from "@/helpers/removeToast";
+import { ToastConfigInterface } from "@/interfaces/ToastOptionInterface";
 import { ToastManager } from "@/services/singleton";
-import { ToastConfigType } from "@/types/ToastOptionType";
 
-export const removeToast = (id?: string) => {
-  ToastManager.removeToast(id);
-};
-
-export const addToast = (option: ToastConfigType) => {
+export const addToast = (option: ToastConfigInterface) => {
   const localId = nanoid();
   const { duration, margin, position } = option;
   ToastManager.addToast({

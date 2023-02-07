@@ -1,6 +1,6 @@
+import { ToastOptionInterface } from "interfaces/ToastOptionInterface";
 import { forwardRef, memo } from "react";
 import { createPortal } from "react-dom";
-import { ToastOptionType } from "types/ToastOptionType";
 
 import { ToastBody } from "@/components/ToastContainer/styled";
 import { ToastElement } from "@/components/ToastElement";
@@ -16,7 +16,7 @@ const ToastContainerForwardRef = forwardRef((_, ref) => {
   const { options } = useToast(ref);
   return createPortal(
     <ToastBody>
-      {options.map((currentOption: ToastOptionType) => {
+      {options.map((currentOption: ToastOptionInterface) => {
         const { position, id } = currentOption;
         return (
           <ToastElement
